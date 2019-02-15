@@ -1,0 +1,36 @@
+#!/sbin/openrc-run
+# Copyright 1999-2018 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+DAEMON="/usr/bin/dnsdist"
+PIDFILE="/var/run/dnsdist.pid"
+CONFIG="/etc/dnsdist/dnsdist.conf"
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting dnsdist"
+	configcheck || return 1
+        start-stop-daemon --background --make-pidfile --pidfile ${PIDFILE} --start \
+	--exec ${DAEMON} -- --supervised --config ${CONFIG}  >/dev/null 2>&1
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping dnsdist"
+        start-stop-daemon --stop --quiet -p ${PIDFILE} >/dev/null 2>&1
+        eend $?
+}
+
+configcheck() {
+    ebegin "Checking configuration file (${CONFIG})"
+    ${DAEMON} --check-config -C ${CONFIG} > /dev/null
+
+    if [ $? -ne 0 ]; then
+        ${DAEMON} --check-config -C ${CONFIG}
+    fi
+
+    eend $? "failed, please correct errors above"
+}

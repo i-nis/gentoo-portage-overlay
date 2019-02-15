@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+	<email>swegener@gentoo.org</email>
+	<name>Sven Wegener</name>
+	<description>Primary Maintainer</description>
+</maintainer>
+<longdescription>
+dnsdist is a highly DNS-, DoS- and abuse-aware loadbalancer. Its goal in life is to 
+route traffic to the best server, delivering top performance to legitimate users while 
+shunting or blocking abusive traffic.
+</longdescription>
+<use>
+	<flag name="luajit">Enable support for <pkg>dev-lang/luajit</pkg>.</flag>
+	<flag name="protobuf">Enable support for <pkg>dev-libs/protobuf</pkg>.</flag>
+</use>
+</pkgmetadata>
