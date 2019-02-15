@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="7"
 
-inherit toolchain-funcs flag-o-matic eutils versionator
+inherit toolchain-funcs flag-o-matic eutils
 
 DESCRIPTION="dnsdist is a highly DNS-, DoS- and abuse-aware loadbalancer"
 HOMEPAGE="http://dnsdist.org/"

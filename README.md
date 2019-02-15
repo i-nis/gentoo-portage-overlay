@@ -19,7 +19,7 @@ emerge --sync
 Para extender su portage con los ebuilds desarrollados por este proyecto, debe crear el archivo _/etc/portage/repos.conf/gentoo-portage-overlay.conf_ con el siguiente contenido:
 
 <pre>
-[overlay]
+[gentoo-portage-overlay]
 location = /usr/local/portage/gentoo-portage-overlay
 sync-type = git
 sync-uri = https://github.com/ingeniovirtual/gentoo-portage-overlay.git
