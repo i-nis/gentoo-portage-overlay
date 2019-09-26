@@ -1,6 +1,7 @@
 # gentoo-portage-overlay
 
-[![Repoman Status](https://travis-ci.org/ingeniovirtual/gentoo-portage-overlay.svg?branch=master)](https://travis-ci.org/ingeniovirtual/gentoo-portage-overlay)
+[![Repoman Status](https://travis-ci.org/ingeniovirtual/gentoo-portage-overlay.svg?branch=master)](https://travis-ci.org/ingeniovirtual/gentoo-portage-overlay) [![License](http://img.shields.io/:license-gpl-green.svg)](https://tldrlegal.com/license/gnu-general-public-license-v2)
+
 
 ## Portage
 
