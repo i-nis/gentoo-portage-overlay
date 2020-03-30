@@ -1,6 +1,6 @@
 # gentoo-portage-overlay
 
-[![Repoman Status](https://travis-ci.org/ingeniovirtual/gentoo-portage-overlay.svg?branch=master)](https://travis-ci.org/ingeniovirtual/gentoo-portage-overlay) [![License](http://img.shields.io/:license-gpl-green.svg)](https://tldrlegal.com/license/gnu-general-public-license-v2)
+[![Repoman Status](https://travis-ci.org/i-nis/gentoo-portage-overlay.svg?branch=master)](https://travis-ci.org/i-nis/gentoo-portage-overlay) [![License](http://img.shields.io/:license-gpl-green.svg)](https://tldrlegal.com/license/gnu-general-public-license-v2)
 
 
 ## Portage
@@ -23,6 +23,6 @@ Para extender su portage con los ebuilds desarrollados por este proyecto, debe c
 [gentoo-portage-overlay]
 location = /usr/local/portage/gentoo-portage-overlay
 sync-type = git
-sync-uri = https://github.com/ingeniovirtual/gentoo-portage-overlay.git
+sync-uri = https://github.com/i-nis/gentoo-portage-overlay.git
 auto-sync = yes
 </pre>
