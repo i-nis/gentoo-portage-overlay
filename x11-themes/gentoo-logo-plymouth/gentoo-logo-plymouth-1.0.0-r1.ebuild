@@ -3,7 +3,8 @@
 
 EAPI=7
 
-DESCRIPTION="An Gentoo Plymouth theme Based of Ubuntu Plymouth Theme"
+DESCRIPTION="An Gentoo Plymouth theme Based of Ubuntu Plymouth Theme."
+HOMEPAGE="https://www.gentoo.org"
 LICENSE="GPL-2"
 SLOT="0"
 
@@ -22,6 +23,5 @@ doins -r plymouthd.conf
 }
 
 pkg_postinst() {
-    elog "${PN} ${PV} installed successfully in your system"
+	elog "${PN} ${PV} installed successfully in your system"
 }
-
