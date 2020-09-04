@@ -8,7 +8,7 @@ HOMEPAGE="https://www.nis.com.ar"
 LICENSE="GPL-3"
 SLOT="0"
 
-RDEPEND="app-misc/ddcutil"
+RDEPEND="app-misc/ddcutil[drm,user-permissions]"
 
 KEYWORDS="amd64 x86"
 
