@@ -1,0 +1,99 @@
+#!/bin/bash
+#
+# screen_brightness: script para ajustar el brillo de los monitores extermos.
+#
+# (C) 2020 NIS
+# Autor: Martin Andres Gomez Gimenez <mggimenez@nis.com.ar>
+# Distributed under the terms of the GNU General Public License v3
+#
+# Depende del paquete app-misc/ddcutil.
+
+
+
+usage() {
+  local PROG_NAME=$(basename ${0})
+  local PROG_PATH=$(echo ${0} | sed -e 's,[\\/][^\\/][^\\/]*$,,')
+  echo ""
+  echo "${PROG_NAME}:"
+  echo "Ajusta el brillo de los monitores externos."
+  echo ""
+  echo "  Uso: "
+  echo "       ${PROG_PATH}/${PROG_NAME} [-h|--help]"
+  echo "       ${PROG_PATH}/${PROG_NAME} [-d|--down]"
+  echo "       ${PROG_PATH}/${PROG_NAME} [-u|--up]"
+  echo ""
+  echo "       --help, -h"
+  echo "           Muestra esta ayuda."
+  echo ""
+  echo "       --down, -d"
+  echo "           Baja un 10% el brillo de los monitores conectados."
+  echo ""
+  echo "       --up, -u"
+  echo "           Sube un 10% el brillo de los monitores conectados."
+  echo ""
+}
+
+
+
+# Verifica el correcto pasaje de parámetros.
+function parameters() {
+  local OPT=$(getopt \
+              --options dhu \
+              --longoptions down,help,up \
+              --name 'screen_brightness' \
+              -- "${@}")
+
+  if [ $? -ne 0 ]; then
+    echo 'Error en parámetros...' >&2
+    exit 1
+  fi
+
+  eval set -- "${OPT}"
+
+  while true; do
+
+    case "$1" in
+      -d | --down )
+        VALUE="- 10"
+        shift
+        continue
+        ;;
+
+      -h | --help )
+        usage
+        exit
+        ;;
+
+      -u | --up )
+        VALUE="+ 10"
+        shift
+        continue
+        ;;
+
+      -- )
+        shift
+        break
+        ;;
+
+      * )
+        warning "ERROR" "Error en parámetros. Vea:"
+        echo " $(basename ${0}) --help"
+        echo ""
+        exit 1
+        ;;
+    esac
+    shift
+
+  done
+}
+
+# Inicio del progama.
+parameters "${@}"
+
+# Se consulta el número de monitores activos.
+SCREENS=$(ddcutil detect --async --sleep-multiplier .025 --brief | grep Display | wc -l)
+
+for ((i=1; i<=${SCREENS}; i++)); do
+  ddcutil setvcp 10 ${VALUE} --noverify --sleep-multiplier .025 --display ${i}
+done
+
