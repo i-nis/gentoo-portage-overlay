@@ -1,0 +1,12 @@
+--- a/library/mysql.canvas/src/gtk/mdc_gtk_canvas_view.cpp
++++ b/library/mysql.canvas/src/gtk/mdc_gtk_canvas_view.cpp
+@@ -31,9 +31,6 @@
+ 
+ std::string mdc::detect_opengl_version() {
+   int major, minor;
+-  Display *dpy = GDK_DISPLAY_XDISPLAY(gdk_display_get_default());
+-  if (!glXQueryVersion(dpy, &major, &minor))
+-    return ""; // glx not supported
+   return "";
+ }
+ 
