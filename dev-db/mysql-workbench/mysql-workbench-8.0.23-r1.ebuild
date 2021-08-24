@@ -72,7 +72,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-6.2.5-wbcopytables.patch"
 	"${FILESDIR}/${PN}-8.0.19-mysql-connector-8.patch"
 	"${FILESDIR}/${PN}-8.0.23-findlibssh.patch"
-	"${PN}-glxQueryVersion.patch"
+	"${FILESDIR}/${PN}-glxQueryVersion.patch"
 )
 
 src_unpack() {
