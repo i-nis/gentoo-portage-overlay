@@ -73,6 +73,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-8.0.19-mysql-connector-8.patch"
 	"${FILESDIR}/${PN}-8.0.23-findlibssh.patch"
 	"${FILESDIR}/${PN}-glxQueryVersion.patch"
+	"${FILESDIR}/${PN}-link_libraries.patch"
 )
 
 src_unpack() {
