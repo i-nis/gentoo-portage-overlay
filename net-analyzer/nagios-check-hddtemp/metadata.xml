@@ -6,7 +6,10 @@
 	<name>Martin Andres Gomez gimenez</name>
 	<description>Primary Maintainer</description>
 </maintainer>
+<upstream>
+	<remote-id type="github">vint21h/nagios-check-hddtemp</remote-id>
+</upstream>
 <longdescription>
-nagios-check-hddtemp is a Nagios-plugin that uses hddtemp to check disk temperature over the network.
+Plugin for Nagios/Icinga that uses the app-admin/hddtemp package to check hard drive temperature over the network.
 </longdescription>
 </pkgmetadata>
