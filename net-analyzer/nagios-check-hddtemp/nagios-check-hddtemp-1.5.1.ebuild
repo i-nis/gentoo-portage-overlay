@@ -2,13 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
-PYTHON_COMPAT=( python3_{8..10} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{8..11} )
 
 inherit distutils-r1
 
-DESCRIPTION="Nagios-plugin that uses hddtemp to check disk temperature over the network."
+DESCRIPTION="Nagios/Icinga plugin that uses hddtemp to check disk temperature."
 HOMEPAGE="https://github.com/vint21h/nagios-check-hddtemp"
-SRC_URI="${HOMEPAGE}/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/vint21h/nagios-check-hddtemp/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
