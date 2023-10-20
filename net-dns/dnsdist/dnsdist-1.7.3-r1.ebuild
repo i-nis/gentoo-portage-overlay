@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -26,8 +26,8 @@ RDEPEND="acct-group/dnsdist
 	acct-user/dnsdist
 	dev-libs/boost:=
 	dev-libs/libedit:=
+	dev-libs/libsodium:=
 	>=dev-libs/protobuf-3:=
-	dnscrypt? ( dev-libs/libsodium:= )
 	dnstap? ( dev-libs/fstrm:= )
 	doh? ( www-servers/h2o:=[libh2o] )
 	lmdb? ( dev-db/lmdb:= )
@@ -44,6 +44,10 @@ RDEPEND="acct-group/dnsdist
 
 DEPEND="${RDEPEND}"
 BDEPEND="virtual/pkgconfig"
+
+PATCHES=(
+	"${FILESDIR}"/"${PN}"-1.7.3-gcc13.patch
+)
 
 src_configure() {
 	# bug #822855
