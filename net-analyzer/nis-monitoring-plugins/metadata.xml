@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+	<email>mggimenez@nis.com.ar</email>
+	<name>Martin Andres Gomez gimenez</name>
+	<description>Primary Maintainer</description>
+</maintainer>
+<upstream>
+	<remote-id type="gitlab">i-nis/monitoring-plugins</remote-id>
+</upstream>
+<longdescription>
+Additional plugins for Nagios/Icinga2 developed especially for NIS servers that include monitoring of hardware and software not included in the original Nagios/Icinga2 packages.
+</longdescription>
+</pkgmetadata>
