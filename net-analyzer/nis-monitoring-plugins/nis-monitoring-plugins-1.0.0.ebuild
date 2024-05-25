@@ -14,6 +14,11 @@ RDEPEND="
 	acct-group/nagios
 	acct-user/nagios"
 
+src_unpack() {
+	unpack ${A}
+	mv "${WORKDIR}/monitoring-plugins-v${PV}" "${WORKDIR}/${P}" || die "Install failed!"
+}
+
 src_install() {
 	dodir "/usr/$(get_libdir)/nagios/plugins"
 	into "/usr/$(get_libdir)/nagios/plugins"
