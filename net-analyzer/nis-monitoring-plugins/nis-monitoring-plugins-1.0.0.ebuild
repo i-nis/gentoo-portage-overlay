@@ -16,7 +16,7 @@ RDEPEND="
 
 src_unpack() {
 	unpack ${A}
-	mv "${WORKDIR}/monitoring-plugins-v${PV}" "${WORKDIR}/${P}" || die "Install failed!"
+	mv "${WORKDIR}/monitoring_plugins-v${PV}" "${WORKDIR}/${P}" || die "Install failed!"
 }
 
 src_install() {
