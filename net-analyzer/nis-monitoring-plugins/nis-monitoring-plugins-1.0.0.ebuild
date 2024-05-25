@@ -23,5 +23,5 @@ src_install() {
 	dodir "/usr/$(get_libdir)/nagios/plugins"
 	into "/usr/$(get_libdir)/nagios/plugins"
 	dobin plugins/*
-	cp sudoers.d/* /etc/sudoers.d/
+	cp sudoers.d/* "${D}/etc/sudoers.d/"
 }
