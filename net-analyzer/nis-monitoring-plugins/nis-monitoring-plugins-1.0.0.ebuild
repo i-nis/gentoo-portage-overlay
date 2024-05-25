@@ -5,7 +5,7 @@ EAPI="8"
 
 DESCRIPTION="Nagios/Icinga plugins for servers."
 HOMEPAGE="https://proyectos.nis.com.ar/projects/monitoring_plugins"
-SRC_URI="https://gitlab.com/i-nis/monitoring_plugins/-/archive/v${PV}/monitoring_plugins-v${PV}.tar.bz2 -> ${P}.tar.gz"
+SRC_URI="https://gitlab.com/i-nis/monitoring_plugins/-/archive/v${PV}/monitoring_plugins-v${PV}.tar.bz2 -> ${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 x86"
