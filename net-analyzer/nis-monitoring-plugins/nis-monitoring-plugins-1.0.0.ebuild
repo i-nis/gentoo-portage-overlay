@@ -21,7 +21,7 @@ src_unpack() {
 
 src_install() {
 	dodir "/usr/$(get_libdir)/nagios/plugins"
-	into "/usr/$(get_libdir)/nagios/plugins"
+	exeinto "/usr/$(get_libdir)/nagios/plugins"
 	doexe plugins/*
 	insinto /etc/sudoers.d
 	doins sudoers.d/*
