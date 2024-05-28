@@ -13,7 +13,8 @@ IUSE="+minimal"
 
 RDEPEND="
 	acct-group/nagios
-	acct-user/nagios"
+	acct-user/nagios
+	app-admin/hddtemp"
 
 src_unpack() {
 	unpack ${A}
