@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
@@ -9,6 +9,7 @@ SRC_URI="https://gitlab.com/i-nis/monitoring_plugins/-/archive/v${PV}/monitoring
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 x86"
+IUSE="+minimal"
 
 RDEPEND="
 	acct-group/nagios
@@ -20,9 +21,15 @@ src_unpack() {
 }
 
 src_install() {
-	dodir "/usr/$(get_libdir)/nagios/plugins"
 	exeinto "/usr/$(get_libdir)/nagios/plugins"
+	dodir "/usr/$(get_libdir)/nagios/plugins"
 	doexe plugins/*
 	insinto /etc/sudoers.d
 	doins sudoers.d/*
+
+	if use !minimal; then
+		insinto /etc/icinga2/zones.d/global-templates
+		doins icinga2/global-templates/*
+	fi
+
 }
