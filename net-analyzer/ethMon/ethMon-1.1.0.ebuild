@@ -13,8 +13,7 @@ IUSE="+minimal"
 
 RDEPEND="
 	acct-group/nagios
-	acct-user/nagios
-	app-admin/sudo"
+	acct-user/nagios"
 
 PATCHES=(
 	"${FILESDIR}"/ethMon-db.patch
@@ -24,8 +23,6 @@ src_install() {
 	exeinto "/usr/$(get_libdir)/nagios/plugins"
 	dodir "/usr/$(get_libdir)/nagios/plugins"
 	doexe "${PN}"
-	insinto /etc/sudoers.d/
-	doins "${FILESDIR}"/ethMon
 
 	if use !minimal; then
 		insinto /etc/icinga2/zones.d/global-templates
