@@ -26,6 +26,6 @@ src_install() {
 
 	if use !minimal; then
 		insinto /etc/icinga2/zones.d/global-templates
-		"${FILESDIR}"/ethMon.conf
+		doins "${FILESDIR}"/ethMon.conf
 	fi
 }
