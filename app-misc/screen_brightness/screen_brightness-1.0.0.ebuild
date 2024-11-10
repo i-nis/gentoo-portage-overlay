@@ -5,14 +5,13 @@ EAPI=7
 
 DESCRIPTION="Increase or decrease the brightness of your monitor by 10%."
 HOMEPAGE="https://www.nis.com.ar"
+S="${FILESDIR}"
 LICENSE="GPL-3"
 SLOT="0"
 
 RDEPEND="app-misc/ddcutil[drm,user-permissions]"
 
 KEYWORDS="amd64 x86"
-
-S="${FILESDIR}"
 
 src_install() {
 	dobin screen_brightness

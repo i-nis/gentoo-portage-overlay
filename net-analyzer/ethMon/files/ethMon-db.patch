@@ -1,0 +1,12 @@
+--- /tmp/a/ethMon
++++ /tmp/b/ethMon
+@@ -7,7 +7,7 @@
+ import sys
+ from pathlib import Path
+ 
+-__PREV_DATA__ = '{}/.ethMonCache'.format(Path.home().as_posix())
++__PREV_DATA__ = '/tmp/.ethMonCache'.format(Path.home().as_posix())
+ __total__ = 'tot_{}'
+ __old__ = 'old_{}'
+ 
+

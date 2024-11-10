@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>mggimenez@nis.com.ar</email>
+		<name>Martin Andres Gomez gimenez</name>
+		<description>Primary Maintainer</description>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">githubDante/ethMon</remote-id>
+	</upstream>
+	<longdescription>
+		ethMon is an Icinga2/Nagios compatible Python plugin for network 
+		traffic monitoring on a specific interface. Currently the 
+		carbon/graphite data is always in bytes.
+	</longdescription>
+</pkgmetadata>
