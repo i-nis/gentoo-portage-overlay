@@ -1,0 +1,6 @@
+icinga ALL=(root) NOPASSWD: /usr/lib/nagios/plugins/ethMon
+icinga ALL=(root) NOPASSWD: /usr/lib64/nagios/plugins/ethMon
+
+nagios ALL=(root) NOPASSWD: /usr/lib/nagios/plugins/ethMon
+nagios ALL=(root) NOPASSWD: /usr/lib64/nagios/plugins/ethMon
+
