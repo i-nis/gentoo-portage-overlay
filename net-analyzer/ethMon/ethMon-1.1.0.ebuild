@@ -22,7 +22,7 @@ PATCHES=(
 src_install() {
 	exeinto "/usr/$(get_libdir)/nagios/plugins"
 	dodir "/usr/$(get_libdir)/nagios/plugins"
-	doexe plugins/*
+	doexe "${PN}"
 
 	if use !minimal; then
 		insinto /etc/icinga2/zones.d/global-templates
