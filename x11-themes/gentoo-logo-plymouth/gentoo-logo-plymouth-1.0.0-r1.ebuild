@@ -4,7 +4,7 @@
 EAPI=7
 
 DESCRIPTION="An Gentoo Plymouth theme Based of Ubuntu Plymouth Theme."
-HOMEPAGE="https://www.gentoo.org"
+HOMEPAGE="https://wiki.gentoo.org/wiki/Project:Artwork"
 S="${FILESDIR}"
 LICENSE="GPL-2"
 SLOT="0"
