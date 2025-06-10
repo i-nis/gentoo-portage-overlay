@@ -9,7 +9,7 @@ S="${FILESDIR}"
 LICENSE="GPL-3"
 SLOT="0"
 
-RDEPEND="app-misc/ddcutil[drm,user-permissions]"
+RDEPEND="app-misc/ddcutil[user-permissions]"
 
 KEYWORDS="amd64 x86"
 
