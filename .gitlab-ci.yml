@@ -13,4 +13,3 @@ pkgcheck:
     - echo "Revisando ebuilds..."
     - pkgcheck scan
     - echo "No se encontraron problemas en ebuilds."
-
