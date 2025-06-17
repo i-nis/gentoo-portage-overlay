@@ -1,6 +1,7 @@
 ---
 stages:
   - test
+  - deploy
 
 pkgcheck:
   stage: test
