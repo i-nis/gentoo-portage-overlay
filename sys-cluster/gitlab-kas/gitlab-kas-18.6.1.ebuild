@@ -9,8 +9,6 @@ DESCRIPTION="GitLab Agent for Kubernetes (non-cluster part)"
 HOMEPAGE="https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent"
 SRC_URI="https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/archive/v${PV}/gitlab-agent-${PV}.tar.bz2 -> ${P}.tar.bz2"
 
-S="${WORKDIR}/gitlab-agent-v${PV}"
-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 x86"
@@ -18,6 +16,12 @@ KEYWORDS="amd64 x86"
 RESTRICT+=" test "
 
 BDEPEND=">=dev-lang/go-1.25.3"
+
+src_unpack() {
+	unpack ${A}
+	mv "${WORKDIR}/gitlab-agent-v${PV}"* "${WORKDIR}/${P}" || die "Install failed!"
+}
+
 
 src_compile() {
 	emake -j1 GOFLAGS="" GOLDFLAGS="" LDFLAGS="" WHAT=cmd/kas kas
