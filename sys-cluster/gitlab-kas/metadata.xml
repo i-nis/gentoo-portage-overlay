@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+	<email>mggimenez@nis.com.ar</email>
+	<name>Martin Andres Gomez gimenez</name>
+	<description>Primary Maintainer</description>
+</maintainer>
+<longdescription>
+GitLab Agent for Kubernetes is an active in-cluster component for solving any GitLab - Kubernetes integration tasks.
+</longdescription>
+<upstream>
+	<remote-id type="gitlab">gitlab-org/cluster-integration/gitlab-agent</remote-id>
+</upstream>
+</pkgmetadata>

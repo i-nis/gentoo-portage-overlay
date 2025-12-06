@@ -1,0 +1,10 @@
+###
+# GitLab KAS (non-cluster-part) config
+
+user="git"
+group="git"
+
+# needed env variables
+own_private_api_url="grpc://localhost:8155"
+
+command_args="--configuration-file /etc/gitlab-kas/config.yaml"
