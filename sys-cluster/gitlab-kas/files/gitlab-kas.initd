@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+description="GitLab KAS - the GitLab Kubernetes Agent (non-cluster-part)"
+pidfile=${pidfile:-"/run/${RC_SVCNAME}/${RC_SVCNAME}.pid"}
+user=${user:-root}
+group=${group:-root}
+
+command="/usr/bin/kas"
+command_args="${command_args}"
+start_stop_daemon_args="--make-pidfile --user ${user} --group ${group} \
+        --background --env OWN_PRIVATE_API_URL=${own_private_api_url} \
+        --stdout /var/log/${RC_SVCNAME}/${RC_SVCNAME}.log \
+        --stderr /var/log/${RC_SVCNAME}/${RC_SVCNAME}.log"
+
+depend() {
+        after net
+}
+
+start_pre() {
+        # Since tmp directories might be on tmpfs, and kas is not generating directories
+        # by itself, we need to make sure they are available at startup
+        checkpath --directory --owner ${user}:${group} --mode 0755 /var/log/${RC_SVCNAME}
+	checkpath --directory --owner ${user}:${group} --mode 0755 /run/${RC_SVCNAME}
+}
