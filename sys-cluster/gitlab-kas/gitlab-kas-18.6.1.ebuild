@@ -22,7 +22,6 @@ src_unpack() {
 	mv "${WORKDIR}/gitlab-agent-v${PV}"* "${WORKDIR}/${P}" || die "Install failed!"
 }
 
-
 src_compile() {
 	emake -j1 GOFLAGS="" GOLDFLAGS="" LDFLAGS="" WHAT=cmd/kas kas
 }
